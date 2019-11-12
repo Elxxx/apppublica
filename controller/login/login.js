@@ -1,4 +1,5 @@
 const controller = {};
+const bcrypt = require('bcrypt');
 
 controller.logInAuth = (req, res, next) => {
 

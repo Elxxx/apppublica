@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Elxxx/apppublica#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "consolidate": "^0.15.1",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
