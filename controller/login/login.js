@@ -13,22 +13,21 @@ controller.logInAuth = (req, res, next) => {
                 })
             } else {
                 if (results.length > 0) {
-
-                    if (results[0].clavesecreta == pass) {
-                        res.send({
-                            "code": 200,
-                            "success": "Autentificación correcta"
-                        });
-                    } else {
-                        res.send({
-                            "code": 204,
-                            "success": "Email o contraseña no corresponden"
-                        });
-                    }
+                    const pass2 = results[0].clavesecreta;
+                    // bcrypt.compare(pass, pass2, function(err, respuesta) {
+                    // if (respuesta) {
+                    req.session.loggedin = true;
+                    req.session.username = email;
+                    res.redirect('/home');
+                    //  } else {
+                    //    res.render('login/login', {
+                    //        error: 'Correo o contraseña incorrecta'
+                    //    });
+                    // }
+                    // });
                 } else {
-                    res.send({
-                        "code": 204,
-                        "success": "El correo no existe"
+                    res.render('login/login', {
+                        error: 'El correo no existe'
                     });
                 }
             }

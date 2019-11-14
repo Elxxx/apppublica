@@ -1,0 +1,52 @@
+include cabecera
+
+.container
+  ul#gn-menu.gn-menu-main
+    li.gn-trigger
+      a.gn-icon.gn-icon-menu
+        span Menu
+      nav.gn-menu-wrapper
+        .gn-scroller
+          ul.gn-menu
+            li.gn-search-item
+              input.gn-search(placeholder='Search' type='search')
+              a.gn-icon.gn-icon-search
+                span Search
+            li
+              a.gn-icon.gn-icon-download Downloads
+              ul.gn-submenu
+                li
+                  a.gn-icon.gn-icon-illustrator Vector Illustrations
+                li
+                  a.gn-icon.gn-icon-photoshop Photoshop files
+            li
+              a.gn-icon.gn-icon-cog Settings
+            li
+              a.gn-icon.gn-icon-help Help
+            li
+              a.gn-icon.gn-icon-archive Archives
+              ul.gn-submenu
+                li
+                  a.gn-icon.gn-icon-article Articles
+                li
+                  a.gn-icon.gn-icon-pictures Images
+                li
+                  a.gn-icon.gn-icon-videos Videos
+        // /gn-scroller
+    li
+      a(href='http://tympanus.net/codrops') Codrops
+    li
+      a.codrops-icon.codrops-icon-prev(href='http://tympanus.net/Development/HeaderEffects/')
+        span Previous Demo
+    li
+      a.codrops-icon.codrops-icon-drop(href='http://tympanus.net/codrops/?p=16030')
+        span Back to the Codrops Article
+  header
+    h1
+    | Google Nexus Website Menu 
+    span
+    | A sidebar menu as seen on the 
+    a(href='http://www.google.com/nexus/index.html') Google Nexus 7
+    |  page
+
+include piepagina

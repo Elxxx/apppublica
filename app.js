@@ -11,7 +11,18 @@ const errorRouter = require('./router/error/error');
 const app = express();
 const dotenv = require('dotenv');
 const pug = require('pug');
+const session = require('express-session');
 dotenv.config();
+
+// Sessiones 
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        expires: 600000
+    }
+}));
 
 // vistas 
 app.set('views', path.join(__dirname, 'views'));
