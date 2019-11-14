@@ -25,9 +25,12 @@ body
 .limiter
   .container-login100
     .wrap-login100.p-l-50.p-r-50.p-t-77.p-b-30
-      form.login100-form.validate-form(action='logInAuth' method='post')
+      form.login100-form.validate-form(action='/login/logInAuth' method='post')  
         span.login100-form-title.p-b-55
           | Login
+          br
+          p #{error}
+          br
         .wrap-input100.validate-input.m-b-16(data-validate='Verifique el Correo: ex@abc.xyz')
           input.input100(type='text' name='email' placeholder='Correo')
           span.focus-input100
@@ -43,7 +46,7 @@ body
           label.label-checkbox100(for='ckb1')
             | Recordar
         .container-login100-form-btn.p-t-25
-          button.login100-form-btn
+          button.login100-form-btn(type='submit' value='Submit')
             | Login
          
         .text-center.w-full.p-t-115

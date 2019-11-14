@@ -7,6 +7,7 @@ const mysql = require('mysql');
 const myConnection = require('express-myconnection');
 const homeRouter = require('./router/home/home');
 const loginRouter = require('./router/login/login');
+const errorRouter = require('./router/error/error');
 const app = express();
 const dotenv = require('dotenv');
 const pug = require('pug');
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Rutas
 app.use('/', homeRouter);
 app.use('/', loginRouter);
+app.use('/', errorRouter);
 
 // Error 404 y Direccionamiento
 app.use(function(req, res, next) {
