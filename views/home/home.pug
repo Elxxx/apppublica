@@ -1,52 +1,197 @@
 include cabecera
 
-.container
-  ul#gn-menu.gn-menu-main
-    li.gn-trigger
-      a.gn-icon.gn-icon-menu
-        span Menu
-      nav.gn-menu-wrapper
-        .gn-scroller
-          ul.gn-menu
-            li.gn-search-item
-              input.gn-search(placeholder='Search' type='search')
-              a.gn-icon.gn-icon-search
-                span Search
-            li
-              a.gn-icon.gn-icon-download Downloads
-              ul.gn-submenu
-                li
-                  a.gn-icon.gn-icon-illustrator Vector Illustrations
-                li
-                  a.gn-icon.gn-icon-photoshop Photoshop files
-            li
-              a.gn-icon.gn-icon-cog Settings
-            li
-              a.gn-icon.gn-icon-help Help
-            li
-              a.gn-icon.gn-icon-archive Archives
-              ul.gn-submenu
-                li
-                  a.gn-icon.gn-icon-article Articles
-                li
-                  a.gn-icon.gn-icon-pictures Images
-                li
-                  a.gn-icon.gn-icon-videos Videos
-        // /gn-scroller
-    li
-      a(href='http://tympanus.net/codrops') Codrops
-    li
-      a.codrops-icon.codrops-icon-prev(href='http://tympanus.net/Development/HeaderEffects/')
-        span Previous Demo
-    li
-      a.codrops-icon.codrops-icon-drop(href='http://tympanus.net/codrops/?p=16030')
-        span Back to the Codrops Article
-  header
-    h1
-    | Google Nexus Website Menu 
-    span
-    | A sidebar menu as seen on the 
-    a(href='http://www.google.com/nexus/index.html') Google Nexus 7
-    |  page
+#right-panel.right-panel
+  // Header
+  header#header.header
+    .top-left
+      .navbar-header
+        a.navbar-brand(href='./')
+          img(src='/images/logo.png' alt='Logo' style=' height: 37px;')
+        a.navbar-brand.hidden(href='./')
+          img(src='/images/logo2.png' alt='Logo')
+        a#menuToggle.menutoggle
+          i.fa.fa-bars
+    .top-right
+      .header-menu
+        .header-left
+          button.search-trigger
+            i.fa.fa-search
+          .form-inline
+            form.search-form
+              input.form-control.mr-sm-2(type='text' placeholder='Search ...' aria-label='Search')
+              button.search-close(type='submit')
+                i.fa.fa-close
+          .dropdown.for-notification
+            button#notification.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              i.fa.fa-bell
+              span.count.bg-danger 3
+            .dropdown-menu(aria-labelledby='notification')
+              p.red You have 3 Notification
+              a.dropdown-item.media(href='#')
+                i.fa.fa-check
+                p Server #1 overloaded.
+              a.dropdown-item.media(href='#')
+                i.fa.fa-info
+                p Server #2 overloaded.
+              a.dropdown-item.media(href='#')
+                i.fa.fa-warning
+                p Server #3 overloaded.
+          .dropdown.for-message
+            button#message.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              i.fa.fa-envelope
+              span.count.bg-primary 4
+            .dropdown-menu(aria-labelledby='message')
+              p.red You have 4 Mails
+              a.dropdown-item.media(href='#')
+                span.photo.media-left
+                  img(alt='avatar' src='images/avatar/1.jpg')
+                .message.media-body
+                  span.name.float-left Jonathan Smith
+                  span.time.float-right Just now
+                  p Hello, this is an example msg
+              a.dropdown-item.media(href='#')
+                span.photo.media-left
+                  img(alt='avatar' src='images/avatar/2.jpg')
+                .message.media-body
+                  span.name.float-left Jack Sanders
+                  span.time.float-right 5 minutes ago
+                  p Lorem ipsum dolor sit amet, consectetur
+              a.dropdown-item.media(href='#')
+                span.photo.media-left
+                  img(alt='avatar' src='images/avatar/3.jpg')
+                .message.media-body
+                  span.name.float-left Cheryl Wheeler
+                  span.time.float-right 10 minutes ago
+                  p Hello, this is an example msg
+              a.dropdown-item.media(href='#')
+                span.photo.media-left
+                  img(alt='avatar' src='images/avatar/4.jpg')
+                .message.media-body
+                  span.name.float-left Rachel Santos
+                  span.time.float-right 15 minutes ago
+                  p Lorem ipsum dolor sit amet, consectetur
+        .user-area.dropdown.float-right
+          a.dropdown-toggle.active(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            img.user-avatar.rounded-circle(src='images/admin.jpg' alt='User Avatar')
+          .user-menu.dropdown-menu
+            a.nav-link(href='#') 
+              i.fa.fa-.user
+              | Mi Pefil
+            a.nav-link(href='#')
+              i.fa.fa-.user
+              | Notificaciones
+              span.count 13
+            a.nav-link(href='#')
+              i.fa.fa.-cog
+              | Configuración
+            a.nav-link(href='#')
+              i.fa.fa-power.-off
+              | Cerrar Sesión
+  // /#header
+  
+  // Content
+  .content
+    // Animated
+    .animated.fadeIn
+      .clearfix
+      // Orders
+      .orders
+        .row
+          .col-xl-8
+            .card
+              .card-body
+                h4.box-title Eventos 
+              .card-body--
+                .table-stats.order-table.ov-h
+                  table.table
+                    thead
+                      tr
+                        th.serial #
+                        th.avatar Avatar
+                        th ID
+                        th Name
+                        th Product
+                        th Quantity
+                        th Status
+                    tbody
+                      tr
+                        td.serial 1.
+                        td.avatar
+                          .round-img
+                            a(href='#')
+                              img.rounded-circle(src='images/avatar/1.jpg' alt='')
+                        td  #5469 
+                        td
+                          span.name Louis Stanley
+                        td
+                          span.product iMax
+                        td
+                          span.count 231
+                        td
+                          span.badge.badge-complete Complete
+                      tr
+                        td.serial 2.
+                        td.avatar
+                          .round-img
+                            a(href='#')
+                              img.rounded-circle(src='images/avatar/2.jpg' alt='')
+                        td  #5468 
+                        td
+                          span.name Gregory Dixon
+                        td
+                          span.product iPad
+                        td
+                          span.count 250
+                        td
+                          span.badge.badge-complete Complete
+                      tr
+                        td.serial 3.
+                        td.avatar
+                          .round-img
+                            a(href='#')
+                              img.rounded-circle(src='images/avatar/3.jpg' alt='')
+                        td  #5467 
+                        td
+                          span.name Catherine Dixon
+                        td
+                          span.product SSD
+                        td
+                          span.count 250
+                        td
+                          span.badge.badge-complete Complete
+                      tr
+                        td.serial 4.
+                        td.avatar
+                          .round-img
+                            a(href='#')
+                              img.rounded-circle(src='images/avatar/4.jpg' alt='')
+                        td  #5466 
+                        td
+                          span.name Mary Silva
+                        td
+                          span.product Magic Mouse
+                        td
+                          span.count 250
+                        td
+                          span.badge.badge-pending Pending
+                      tr.pb-0
+                        td.serial 5.
+                        td.avatar.pb-0
+                          .round-img
+                            a(href='#')
+                              img.rounded-circle(src='images/avatar/6.jpg' alt='')
+                        td  #5465 
+                        td
+                          span.name Johnny Stephens
+                        td
+                          span.product Monitor
+                        td
+                          span.count 250
+                        td
+                          span.badge.badge-complete Complete
+                // /.table-stats
+      // /.orders
+  .clearfix
+
 
 include piepagina
